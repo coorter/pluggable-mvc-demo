@@ -1,8 +1,11 @@
-﻿using System.Web.Mvc;
+﻿using System.ComponentModel.Composition;
+using System.Web.Mvc;
 using Szczepanik.Lukasz.PluggableMvcDemo.Common;
 
 namespace Szczepanik.Lukasz.PluggableMvcDemo.Server.Controllers
 {
+    [Export]
+    [PartCreationPolicy(CreationPolicy.NonShared)]
     public class HomeController : BaseController
     {
         public ActionResult Index()
