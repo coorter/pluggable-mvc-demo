@@ -1,0 +1,5 @@
+D:\Lukasz\Programming\github\pluggable-mvc-demo\Plugins\DemoPluginOne\PluginOne\obj\Debug\PluginOne.csprojResolveAssemblyReference.cache
+D:\Lukasz\Programming\github\pluggable-mvc-demo\Plugins\DemoPluginOne\PluginOne\bin\Debug\szczepanik.lukasz.pluggable-mvc-demo.PluginOne.dll
+D:\Lukasz\Programming\github\pluggable-mvc-demo\Plugins\DemoPluginOne\PluginOne\bin\Debug\szczepanik.lukasz.pluggable-mvc-demo.PluginOne.pdb
+D:\Lukasz\Programming\github\pluggable-mvc-demo\Plugins\DemoPluginOne\PluginOne\obj\Debug\szczepanik.lukasz.pluggable-mvc-demo.PluginOne.dll
+D:\Lukasz\Programming\github\pluggable-mvc-demo\Plugins\DemoPluginOne\PluginOne\obj\Debug\szczepanik.lukasz.pluggable-mvc-demo.PluginOne.pdb
