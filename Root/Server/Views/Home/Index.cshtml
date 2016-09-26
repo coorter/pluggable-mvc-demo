@@ -1,5 +1,15 @@
-﻿
-<div class="jumbotron">
+﻿<div class="jumbotron">
     <h1>@ViewBag.Title</h1>
     <p class="lead">This is MVC based application uses simple plugin architecture. Feel free to use it or ask about it!</p>
+    <div>
+        @if (ViewBag.PluginsMethods != null && ViewBag.PluginsMethods.Count > 0)
+        {
+            foreach (dynamic plugin in ViewBag.PluginsMethods)
+            {
+                <div>
+                    <a href="/@plugin.ControllerName/@plugin.MethodName">@plugin.DisplayText</a>
+                </div>
+            }
+        }
+    </div>
 </div>

@@ -20,7 +20,7 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server
             var path = HttpContext.Current.Server.MapPath("");
             var aggregateCatalog = new AggregateCatalog();
             var assemblyCatalog = new AssemblyCatalog(Assembly.GetExecutingAssembly());
-            var pluginCatalog = new DirectoryCatalog(Path.Combine(path, "Plugins/Assemblies"));
+            var pluginCatalog = new DirectoryCatalog(PluginAssembliesCache.PluginsPath);
 
             aggregateCatalog.Catalogs.Add(assemblyCatalog);
             aggregateCatalog.Catalogs.Add(pluginCatalog);

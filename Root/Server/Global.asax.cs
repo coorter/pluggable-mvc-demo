@@ -13,6 +13,7 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             MefConfig.RegisterMef();
+            ViewEnginesConfig.RegisterViewEngines(ViewEngines.Engines);
         }
     }
 }

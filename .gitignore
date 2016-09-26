@@ -5,3 +5,8 @@
 /Common/obj/Debug
 /Common/bin/Debug
 /packages
+/node_modules
+/Plugins/DemoPluginTwo/packages
+/Plugins/DemoPluginTwo/.vs/config
+/Plugins/DemoPluginTwo/PluginTwo/bin/Debug
+/Plugins/DemoPluginTwo/PluginTwo/obj/Debug/TempPE

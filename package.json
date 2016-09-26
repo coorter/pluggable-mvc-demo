@@ -2,5 +2,8 @@
   "name": "",
   "version": "1.0.0",
   "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-watch": "^4.3.9"
   }
 }

@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.Composition;
 using System.Web.Mvc;
 using Szczepanik.Lukasz.PluggableMvcDemo.Common;
+using Szczepanik.Lukasz.PluggableMvcDemo.Common.BaseClasses;
+using Szczepanik.Lukasz.PluggableMvcDemo.Server.Custom;
 
 namespace Szczepanik.Lukasz.PluggableMvcDemo.Server.Controllers
 {
@@ -12,6 +14,7 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.PluginsMethods = ControllerMethodsHelper.GetControllerMethodAttributes();
             return View();
         }
 
