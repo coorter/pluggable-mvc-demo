@@ -12,6 +12,8 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server.Controllers
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class HomeController : BaseController
     {
+        #region Public methods
+
         public ActionResult Index()
         {
             ViewBag.PluginsMethods = ControllerMethodsHelper.GetControllerMethodAttributes();
@@ -31,5 +33,7 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server.Controllers
 
             return View();
         }
+
+        #endregion
     }
 }

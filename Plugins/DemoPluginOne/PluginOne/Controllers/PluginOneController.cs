@@ -13,9 +13,13 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.PluginOne.Controllers
     [ControllerMethod("PluginOne", "Index", "Index method from PluginOneController")]
     public class PluginOneController : BaseController
     {
+        #region Public methods
+
         public ViewResult Index()
         {
             return View();
         }
+
+        #endregion
     }
 }

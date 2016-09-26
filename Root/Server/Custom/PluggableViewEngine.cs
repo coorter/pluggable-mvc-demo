@@ -14,10 +14,13 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server.Custom
         };
 
         #endregion
+        #region Ctors
 
         public PluggableViewEngine()
         {
             ViewLocationFormats = ViewLocationFormats.Concat(PluginViewsLocations).ToArray();
         }
+
+        #endregion
     }
 }

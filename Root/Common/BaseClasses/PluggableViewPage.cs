@@ -6,12 +6,11 @@ using System.Web.Mvc;
 namespace Szczepanik.Lukasz.PluggableMvcDemo.Common.BaseClasses
 {
     public class PluggableViewPage : WebViewPage
-    {        
+    {
         #region Overrides of WebPageExecutingBase
 
         public override void Execute()
         {
-            
         }
 
         #endregion
@@ -30,9 +29,9 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Common.BaseClasses
             }
         }
 
-        private Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+        private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
         {
-            var assembly = PluginAssembliesCache.AssemblyCache.Values.FirstOrDefault(v => v.FullName == args.Name);
+            Assembly assembly = PluginAssembliesCache.AssemblyCache.Values.FirstOrDefault(v => v.FullName == args.Name);
             return assembly;
         }
 

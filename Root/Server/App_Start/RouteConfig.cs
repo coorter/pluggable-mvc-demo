@@ -5,6 +5,8 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server
 {
     public class RouteConfig
     {
+        #region Public methods
+
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
@@ -13,7 +15,9 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                );
         }
+
+        #endregion
     }
 }

@@ -5,6 +5,8 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Common.Attributes
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = true)]
     public class ControllerMethodAttribute : Attribute
     {
+        #region Ctors
+
         public ControllerMethodAttribute(string controllerName, string methodName, string displayText)
         {
             ControllerName = controllerName;
@@ -12,8 +14,13 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Common.Attributes
             DisplayText = displayText;
         }
 
+        #endregion
+        #region Properties
+
         public string ControllerName { get; }
         public string MethodName { get; }
         public string DisplayText { get; }
+
+        #endregion
     }
 }

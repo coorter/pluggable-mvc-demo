@@ -9,6 +9,8 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server.Custom
 {
     public class ControllerMethodsHelper
     {
+        #region Public methods
+
         public static IEnumerable<ControllerMethodAttribute> GetControllerMethodAttributes()
         {
             var enumerable = new List<ControllerMethodAttribute>();
@@ -27,5 +29,7 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server.Custom
 
             return enumerable;
         }
+
+        #endregion
     }
 }

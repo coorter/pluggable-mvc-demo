@@ -6,21 +6,25 @@ using System.Web.Compilation;
 using Szczepanik.Lukasz.PluggableMvcDemo.Common;
 using Szczepanik.Lukasz.PluggableMvcDemo.Server;
 
-[assembly: PreApplicationStartMethod(typeof(PreApplicationStart), "Start")]
+[assembly: PreApplicationStartMethod(typeof (PreApplicationStart), "Start")]
 
 namespace Szczepanik.Lukasz.PluggableMvcDemo.Server
 {
     public class PreApplicationStart
     {
+        #region Public methods
+
         public static void Start()
         {
-            var pluginPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins", "Assemblies");
-            foreach (var file in Directory.GetFiles(pluginPath, "*.dll"))
+            string pluginPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Plugins", "Assemblies");
+            foreach (string file in Directory.GetFiles(pluginPath, "*.dll"))
             {
-                var assembly = Assembly.LoadFile(file);
+                Assembly assembly = Assembly.LoadFile(file);
                 PluginAssembliesCache.AssemblyCache.TryAdd(file, assembly);
                 BuildManager.AddReferencedAssembly(assembly);
             }
         }
+
+        #endregion
     }
 }

@@ -4,7 +4,7 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Common.BaseClasses
 {
     public class BaseController : Controller
     {
-        #region ctors
+        #region Ctors
 
         public BaseController()
         {

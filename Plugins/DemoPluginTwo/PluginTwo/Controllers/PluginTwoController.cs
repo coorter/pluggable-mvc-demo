@@ -13,9 +13,13 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.PluginTwo.Controllers
     [ControllerMethod("PluginTwo", "Index", "Index from PluginControllerTwo")]
     public class PluginTwoController : BaseController
     {
+        #region Public methods
+
         public ViewResult Index()
         {
             return View();
         }
+
+        #endregion
     }
 }
