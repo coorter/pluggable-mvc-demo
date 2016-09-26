@@ -1,4 +1,12 @@
-﻿using System;
+﻿/**
+ * @license
+ * Copyright Łukasz Szczepanik. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://github.com/coorter/pluggable-mvc-demo/blob/master/LICENSE
+ */
+
+using System;
 using System.Linq;
 using System.Reflection;
 using System.Web.Mvc;
@@ -6,12 +14,11 @@ using System.Web.Mvc;
 namespace Szczepanik.Lukasz.PluggableMvcDemo.Common.BaseClasses
 {
     public class PluggableViewPage : WebViewPage
-    {        
+    {
         #region Overrides of WebPageExecutingBase
 
         public override void Execute()
         {
-            
         }
 
         #endregion
@@ -30,9 +37,9 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Common.BaseClasses
             }
         }
 
-        private Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
+        private static Assembly CurrentDomain_AssemblyResolve(object sender, ResolveEventArgs args)
         {
-            var assembly = PluginAssembliesCache.AssemblyCache.Values.FirstOrDefault(v => v.FullName == args.Name);
+            Assembly assembly = PluginAssembliesCache.AssemblyCache.Values.FirstOrDefault(v => v.FullName == args.Name);
             return assembly;
         }
 

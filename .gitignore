@@ -10,3 +10,10 @@
 /Plugins/DemoPluginTwo/.vs/config
 /Plugins/DemoPluginTwo/PluginTwo/bin/Debug
 /Plugins/DemoPluginTwo/PluginTwo/obj/Debug/TempPE
+/Plugins/DemoPluginOne/PluginOne/bin/Debug
+/Plugins/DemoPluginOne/PluginOne/obj/Debug
+/Plugins/DemoPluginTwo/PluginTwo/obj/Debug
+/Root/Common/bin/Debug
+/Root/Common/obj/Debug
+/Root/Server/bin
+/Root/Server/obj/Debug

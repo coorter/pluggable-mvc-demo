@@ -1,7 +1,14 @@
-﻿using System;
+﻿/**
+ * @license
+ * Copyright Łukasz Szczepanik. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://github.com/coorter/pluggable-mvc-demo/blob/master/LICENSE
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
-using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Web;
@@ -11,28 +18,30 @@ using Szczepanik.Lukasz.PluggableMvcDemo.Common;
 
 namespace Szczepanik.Lukasz.PluggableMvcDemo.Server
 {
+
     #region MefConfig
 
     internal class MefConfig
     {
         internal static void RegisterMef()
         {
-            var path = HttpContext.Current.Server.MapPath("");
-            var aggregateCatalog = new AggregateCatalog();
-            var assemblyCatalog = new AssemblyCatalog(Assembly.GetExecutingAssembly());
-            var pluginCatalog = new DirectoryCatalog(PluginAssembliesCache.PluginsPath);
+            string path = HttpContext.Current.Server.MapPath("");
+            AggregateCatalog aggregateCatalog = new AggregateCatalog();
+            AssemblyCatalog assemblyCatalog = new AssemblyCatalog(Assembly.GetExecutingAssembly());
+            DirectoryCatalog pluginCatalog = new DirectoryCatalog(PluginAssembliesCache.PluginsPath);
 
             aggregateCatalog.Catalogs.Add(assemblyCatalog);
             aggregateCatalog.Catalogs.Add(pluginCatalog);
 
-            var compositionContainer = new CompositionContainer(aggregateCatalog);
-            var mefDependecyResolver = new MefDependecyResolver(compositionContainer);
+            CompositionContainer compositionContainer = new CompositionContainer(aggregateCatalog);
+            MefDependecyResolver mefDependecyResolver = new MefDependecyResolver(compositionContainer);
 
             ControllerBuilder.Current.SetControllerFactory(new MefControllerFactory(compositionContainer, mefDependecyResolver));
         }
     }
 
     #endregion
+
     #region MefDependecyResolver
 
     public class MefDependecyResolver : IDependencyResolver
@@ -61,6 +70,7 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server
     }
 
     #endregion
+
     #region MefControllerFactory
 
     public class MefControllerFactory : DefaultControllerFactory
@@ -86,7 +96,7 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server
 
         protected override Type GetControllerType(RequestContext requestContext, string controllerName)
         {
-            var controllerType = base.GetControllerType(requestContext, controllerName);
+            Type controllerType = base.GetControllerType(requestContext, controllerName);
             if (controllerType == null)
             {
                 var mefControllerType = _compositionContainer.GetExports<IController, IControllerMetadata>()

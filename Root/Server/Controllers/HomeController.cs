@@ -1,4 +1,12 @@
-﻿using System.ComponentModel.Composition;
+﻿/**
+ * @license
+ * Copyright Łukasz Szczepanik. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://github.com/coorter/pluggable-mvc-demo/blob/master/LICENSE
+ */
+
+using System.ComponentModel.Composition;
 using System.Web.Mvc;
 using Szczepanik.Lukasz.PluggableMvcDemo.Common;
 using Szczepanik.Lukasz.PluggableMvcDemo.Common.BaseClasses;
@@ -12,6 +20,8 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server.Controllers
     [PartCreationPolicy(CreationPolicy.NonShared)]
     public class HomeController : BaseController
     {
+        #region Public methods
+
         public ActionResult Index()
         {
             ViewBag.PluginsMethods = ControllerMethodsHelper.GetControllerMethodAttributes();
@@ -31,5 +41,7 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server.Controllers
 
             return View();
         }
+
+        #endregion
     }
 }

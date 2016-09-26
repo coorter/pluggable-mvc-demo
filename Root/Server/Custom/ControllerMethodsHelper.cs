@@ -1,4 +1,12 @@
-﻿using System.Collections.Generic;
+﻿/**
+ * @license
+ * Copyright Łukasz Szczepanik. All Rights Reserved.
+ *
+ * Use of this source code is governed by an MIT-style license that can be
+ * found in the LICENSE file at https://github.com/coorter/pluggable-mvc-demo/blob/master/LICENSE
+ */
+
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Szczepanik.Lukasz.PluggableMvcDemo.Common;
@@ -9,6 +17,8 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server.Custom
 {
     public class ControllerMethodsHelper
     {
+        #region Public methods
+
         public static IEnumerable<ControllerMethodAttribute> GetControllerMethodAttributes()
         {
             var enumerable = new List<ControllerMethodAttribute>();
@@ -27,5 +37,7 @@ namespace Szczepanik.Lukasz.PluggableMvcDemo.Server.Custom
 
             return enumerable;
         }
+
+        #endregion
     }
 }
