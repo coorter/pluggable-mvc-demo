@@ -17,3 +17,5 @@
 /Root/Common/obj/Debug
 /Root/Server/bin
 /Root/Server/obj/Debug
+/Plugins/DemoPluginOne/packages
+/Root/Server/Plugins
