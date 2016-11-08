@@ -83,7 +83,9 @@
   <Target Name="AfterBuild">
     <ItemGroup>
       <PluginCompiledFiles Include="$(ProjectDir)\bin\$(Configuration)\$(TargetName).*" />
+	  <PluginViews Include="$(ProjectDir)\Views\**\*" />
     </ItemGroup>
     <Copy SourceFiles="@(PluginCompiledFiles)" DestinationFolder="..\..\..\Root\Server\Plugins\Assemblies" SkipUnchangedFiles="false" />
+    <Copy SourceFiles="@(PluginViews)" DestinationFolder="..\..\..\Root\Server\Plugins\Views\%(RecursiveDir)" SkipUnchangedFiles="false" />
   </Target>
 </Project>
